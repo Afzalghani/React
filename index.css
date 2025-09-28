@@ -1,3 +1,271 @@
-#heading{
-    color: red
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .app {
+    width: 100%;
+    padding: 0 12px; /* or 0 for edge-to-edge layout */
+  }
+    
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ff6f61; /* Warm Coral */
+  color: #ffffff; /* You can try the ones below too */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .nav-items ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+  }
+  
+  .nav-items ul li {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 6px;
+  }
+  
+  .nav-items ul li:hover {
+    background-color: #f2f2f2;
+    color: #007bff;
+  }
+  
+.search{
+    padding: 10px;
 }
+
+.res-card {
+    width: 220px;
+    background-color: #fef3e7; /* Rich Cream */
+  border: 1px solid #ccc;
+  color: #212121;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  }
+  
+  .order-btn {
+    display: none;
+    position: absolute;
+    bottom: 10px; /* Distance from bottom */
+    right: 10px;  /* Distance from right */
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+  }
+  .res-card:hover .order-btn {
+    display: block;
+  }
+  
+  .res-card:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #aaa;
+  }
+  
+  .res-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 8px 0 4px;
+    color: #333;
+  }
+  
+  .res-card h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 4px 0;
+    color: #555;
+  }
+  
+  .cuisine {
+    font-size: 14px;
+    color: #666;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    margin: 4px 0;
+  }
+  
+.res-logo {
+    width: 100%;
+    height: 140px;         /* Fixed height for all images */
+    object-fit: cover;     /* Crop to fit the box, no stretching */
+    border-radius: 4px;    /* Optional: makes corners look smoother */
+    background-color: #e0e0e0;  /* Optional: visible while loading */
+  }
+
+
+  .res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  /* Search Component Styles */
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .search-input {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .search-button:hover {
+    background-color: #005fcc;
+  }
+  
+  
+  /* Filter Button Styles */
+  .filter {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .filter-btn {
+    background-color: #ff7f50; /* Coral - appetizing & warm */
+    color: white;
+    font-size: 16px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .filter-btn:hover {
+    background-color: #ff6347; /* Tomato - richer tone on hover */
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .filter-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 250px;
+  background: #e0e0e0; /* light grey */
+  background-image: linear-gradient(
+    to right,
+    #e0e0e0 0%,
+    #d6d6d6 20%,
+    #e0e0e0 40%,
+    #e0e0e0 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 250px;
+  border-radius: 8px;
+  animation: shimmer 1.2s infinite linear;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* subtle shadow */
+}
+
+/* Header Login Button CSS */
+.login-btn {
+  margin-left: 20px;
+  padding: 6px 16px;
+  background-color: #ff6b6b; /* soft red for visibility */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-btn:hover {
+  background-color: #ff4a4a; /* darker on hover */
+  transform: scale(1.05);   /* slight pop effect */
+}
+
+.login-btn:active {
+  background-color: #e63946; /* pressed state */
+  transform: scale(0.97);
+}
+
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+
